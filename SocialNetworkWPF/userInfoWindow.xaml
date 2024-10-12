@@ -1,0 +1,35 @@
+﻿<Window x:Class="SocialNetworkWPF.userInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocialNetworkWPF"
+        mc:Ignorable="d"
+        Title="userInfoWindow" Height="716.35" Width="603.2"
+        Background="#0F4275">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="stackUserInfo" Grid.Row="0" Background="#B3B6B7" Margin="0,0,-0.2,0.4">
+            <TextBlock Canvas.Left="50" Canvas.Top="4" Name="currUserFirstName" Height="20" Width="95" Background="#F4F6F6"></TextBlock>
+            <TextBlock Canvas.Left="50" Canvas.Bottom="4" Name="currUserSecondName" Height="20" Width="95" Background="#F4F6F6" Canvas.Top="29"></TextBlock>
+            <Canvas x:Name="UserPNG" Canvas.Top="4" Height="43" Width="43" >
+                <Canvas.Background>
+                    <ImageBrush ImageSource="G:\LNU1\LNU\Нереляційні бази даних\MongoDB_Task\MongoDB network\Images\user.png" />
+                </Canvas.Background>
+            </Canvas>
+            <TextBlock Name="GraphNumber" Canvas.Left="262" TextWrapping="Wrap" Text="You know each other through  " Canvas.Top="10"/>
+        </Canvas>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden"  Name="AllPostScroll" Grid.Row="1" Width="500" >
+            <StackPanel Name="AllPostStack" Width="470" >
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Canvas}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

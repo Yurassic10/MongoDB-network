@@ -1,0 +1,365 @@
+[{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c4f"
+  },
+  "FirstName": "Yulia",
+  "SecondName": "Petrenko",
+  "Password": "1234",
+  "Email": "yulia@gmail.com",
+  "Interests": [
+    "It",
+    "Cycling",
+    "Books",
+    "Skiing"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c54"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c53"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c52"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c55"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eaf7a7662c4410d4e0356"
+    },
+    {
+      "$oid": "615eaf867662c4410d4e0357"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c52"
+  },
+  "FirstName": "Stepan",
+  "SecondName": "Maik",
+  "Password": "pass123",
+  "Email": "stepan@gmail.com",
+  "Interests": [
+    "Books",
+    "Skiing",
+    "Cooking"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c4f"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c55"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eb029be3acd3d543497f5"
+    },
+    {
+      "$oid": "615eb02dbe3acd3d543497f6"
+    },
+    {
+      "$oid": "615eb031be3acd3d543497f7"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6154ccec9904cf027a0729d2"
+  },
+  "FirstName": "Marik",
+  "SecondName": "Shtay",
+  "Password": "password",
+  "Email": "mmadz@gmail.com",
+  "Interests": [],
+  "FollowersId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c55"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c51"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615b5d15eb2b7238eb35fd9d"
+    },
+    {
+      "$oid": "615eaefb9c6cb9a1b0a23cde"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "61570366d12ad433434beab4"
+  },
+  "FirstName": "Marik",
+  "SecondName": "Schcpliak",
+  "Password": "1",
+  "Email": "marik@gmail.com",
+  "Interests": [
+    "It",
+    "Cycling"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "6158a3147141ab5a6a905a76"
+    },
+    {
+      "$oid": "6158a3197141ab5a6a905a77"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c50"
+  },
+  "FirstName": "Mariia",
+  "SecondName": "Hartovanets",
+  "Password": "pass",
+  "Email": "mmaria@gmail.com",
+  "Interests": [
+    "It",
+    "Books",
+    "Skiing"
+  ],
+  "FollowersId": [],
+  "FollowingsId": [],
+  "PostsId": []
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c51"
+  },
+  "FirstName": "Nastya",
+  "SecondName": "Loik",
+  "Password": "pass123",
+  "Email": "natya@gmail.com",
+  "Interests": [
+    "Books",
+    "Skiing",
+    "Cooking"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "6154ccec9904cf027a0729d2"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c54"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c53"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eb065f20968e9eaeb4704"
+    },
+    {
+      "$oid": "615eb06df20968e9eaeb4705"
+    },
+    {
+      "$oid": "615eb074f20968e9eaeb4706"
+    },
+    {
+      "$oid": "615eb077f20968e9eaeb4707"
+    },
+    {
+      "$oid": "615eb079f20968e9eaeb4708"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c54"
+  },
+  "FirstName": "Roman",
+  "SecondName": "Kiselyk",
+  "Password": "1111",
+  "Email": "roma@gmail.com",
+  "Interests": [
+    "Cooking",
+    "Basketball"
+  ],
+  "FollowersId": [],
+  "FollowingsId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c4f"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c51"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c53"
+    },
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eb0a30d6fab00c8e2fddc"
+    },
+    {
+      "$oid": "615eb0ad0d6fab00c8e2fddd"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c55"
+  },
+  "FirstName": "Andiy",
+  "SecondName": "Fox",
+  "Password": "fox",
+  "Email": "foxlviv@gmail.com",
+  "Interests": [
+    "Cooking",
+    "Basketball",
+    "IT"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c4f"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c53"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c52"
+    },
+    {
+      "$oid": "6154ccec9904cf027a0729d2"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eb0df6e6d0f906c938cfb"
+    },
+    {
+      "$oid": "615eb0e56e6d0f906c938cfc"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "6156dcfb04479cf81e4c9662"
+  },
+  "FirstName": "Yura",
+  "SecondName": "Hartovanets",
+  "Password": "123",
+  "Email": "y@gmail.com",
+  "Interests": [
+    "It",
+    "Cycling"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "61570366d12ad433434beab4"
+    },
+    {
+      "$oid": "6154ccec9904cf027a0729d2"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c4f"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c52"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c54"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c53"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "61570366d12ad433434beab4"
+    },
+    {
+      "$oid": "6154ccec9904cf027a0729d2"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "61589aa58801d6498ef93c8d"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "615eaeb2350d3b03a08d8c53"
+  },
+  "FirstName": "Tadey",
+  "SecondName": "Kushnir",
+  "Password": "0000",
+  "Email": "kushnir@gmail.com",
+  "Interests": [
+    "Books",
+    "Skiing",
+    "Cooking",
+    "Basketball"
+  ],
+  "FollowersId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c51"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c54"
+    }
+  ],
+  "FollowingsId": [
+    {
+      "$oid": "615eaeb2350d3b03a08d8c4f"
+    },
+    {
+      "$oid": "6156dcfb04479cf81e4c9662"
+    },
+    {
+      "$oid": "615eaeb2350d3b03a08d8c55"
+    }
+  ],
+  "PostsId": [
+    {
+      "$oid": "615eb131f630a18ab463cb00"
+    }
+  ]
+}]

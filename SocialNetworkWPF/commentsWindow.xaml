@@ -1,0 +1,28 @@
+﻿<Window x:Class="SocialNetworkWPF.commentsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SocialNetworkWPF"
+        mc:Ignorable="d"
+        Title="commentsWindow" Height="450" Width="660">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="460"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Background="Beige" VerticalScrollBarVisibility="Hidden"  Name="AllPostScroll" Grid.Column="0" Width="450" >
+            <StackPanel Name="AllCommentsStack" Width="470" >
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Canvas}">
+                        <Setter Property="Margin" Value="0,10,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+            </StackPanel>
+        </ScrollViewer>
+        <TextBox Name="commentText" Grid.Column="1" Background="Bisque" Height="360" Margin="0,0,0,60" TextWrapping="Wrap"></TextBox>
+        <Border Canvas.Top="210" Margin="113,380,9.6,10" Padding="5" BorderThickness="1" BorderBrush="Gray" Background="AntiqueWhite" CornerRadius="10" Grid.Column="1">
+            <TextBlock  Name="commentBlock"  Width="70" MouseDown="commentBlock_MouseDown"></TextBlock>
+        </Border>
+    </Grid>
+</Window>
