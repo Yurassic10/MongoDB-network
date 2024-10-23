@@ -31,18 +31,27 @@ namespace SocialNetworkWPF
             currUserId = _currUser;
             userFromStackId = _userFromStack;
             InitializeComponent();
+            LoadUserInfoAsync();
+            
+        }
+        private async void LoadUserInfoAsync()
+        {
             var posts = DataControl.GetUserPosts(userFromStackId);
             User currUser = DataControl.GetUser(userFromStackId);
             currUserFirstName.Text = currUser.FirstName;
             currUserSecondName.Text = currUser.SecondName;
+
             foreach (var post in posts)
             {
                 CreatePosts(post);
             }
-            FollowUnfollow();
 
-            //GraphNumber.Text = GraphNumber.Text + DataControl.GetPathLength(Convert.ToString(currUserId), Convert.ToString(userFromStackId)) + " handshakes";
+            await FollowUnfollow();
 
+
+            string pathLength = await DataControl.GetPathLength(Convert.ToString(currUserId), Convert.ToString(userFromStackId));
+
+            GraphNumber.Text += pathLength + " handshakes";
         }
         public void CreatePosts(Post post)
         {
@@ -110,7 +119,7 @@ namespace SocialNetworkWPF
 
         }
 
-        public void FollowUnfollow()
+        public async Task FollowUnfollow() 
         {
             if (!DataControl.IsFollowed(currUserId, userFromStackId))
             {
@@ -119,14 +128,14 @@ namespace SocialNetworkWPF
                 followbtn.Width = 70;
                 followbtn.Content = "Follow";
                 followbtn.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FEF5E7"));
-                followbtn.Click += (sender, e) => {
+                followbtn.Click += async (sender, e) => {
                     DataControl.FollowUser(currUserId, userFromStackId);
-                    //DataControl.FollowUserGraph(Convert.ToString(currUserId), Convert.ToString(userFromStackId));
-                    FollowUnfollow();
+                    await DataControl.FollowUserGraph(Convert.ToString(currUserId), Convert.ToString(userFromStackId));
+                    await FollowUnfollow();
                 };
                 stackUserInfo.Children.Add(followbtn);
                 Canvas.SetTop(followbtn, 50);
-                //this.mainwindow.followingBlock.Text = "Following " + DataControl.GetUser(currUserId).FollowingsId.Count();
+                //this.mainwindow.followingBlock.Text = "Following " + DataControl.GetUser(currUserId).FollowingsId.Count(); ///////////////////
 
             }
             else
@@ -139,7 +148,7 @@ namespace SocialNetworkWPF
                 stackUserInfo.Children.Add(unfollowbtn);
                 unfollowbtn.Click += (sender, e) => {
                     DataControl.UnFollowUser(currUserId, userFromStackId);
-                    //DataControl.UnFollowUserGraph(Convert.ToString(currUserId), Convert.ToString(userFromStackId));
+                    DataControl.UnFollowUserGraph(Convert.ToString(currUserId), Convert.ToString(userFromStackId));
                     FollowUnfollow();
                 };
                 Canvas.SetTop(unfollowbtn, 50);

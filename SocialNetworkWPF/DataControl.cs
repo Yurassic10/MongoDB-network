@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
-//using DAL;
 using DAL;
 
 
@@ -14,14 +13,24 @@ namespace SocialNetworkWPF
     static public class DataControl
     {
         static MongoCRUD db;
-
+        static Neo4jCRUD graph;
         static List<Post> posts;
         static List<User> users;
         static List<Comment> comments = new List<Comment>();
         static DataControl()
         {
             db = new MongoCRUD("SocialNetwork");
-
+            graph = new Neo4jCRUD();
+            InitializeAsync(); 
+        }
+        private static async void InitializeAsync()
+        {
+            await graph.InitializeAsync(); 
+        }
+        public static async Task InitializeNeo4jAsync()
+        {
+            graph = new Neo4jCRUD();
+            await graph.ConnectAsync();
         }
 
         static public List<User> GetUsers()
@@ -36,11 +45,8 @@ namespace SocialNetworkWPF
         static public bool FindUserByEmailAndPassword(string email, string password)
         {
             int count = 0;
-            users = GetUsers();
-            var selectedUsers = from user in users
-                                where user.Email == email
-                                where user.Password == password
-                                select user;
+            var selectedUsers = GetUsers()
+                    .Where(user => user.Email == email && user.Password == password);
             if (selectedUsers.Count() == 1)
             {
                 return true;
@@ -151,6 +157,12 @@ namespace SocialNetworkWPF
             userrFollowing.FollowingsId.Add(userFollowedId);
             db.UpsertEntity("Users", userrFollowing.Id, userrFollowing);
         }
+        static public async Task FollowUserGraph(string userId, string userFollowedId)
+        {
+            await graph.CreateRelationAsync(userId, userFollowedId);
+        }
+
+
         static public void UnFollowUser(ObjectId userId, ObjectId userFollowedId)
         {
             User userFollowed = db.GetEntityById<User>("Users", userFollowedId);
@@ -160,6 +172,11 @@ namespace SocialNetworkWPF
             userrFollowing.FollowingsId.Remove(userFollowedId);
             db.UpsertEntity("Users", userrFollowing.Id, userrFollowing);
         }
+        static public async Task UnFollowUserGraph(string userId, string userFollowedId)
+        {
+            await graph.DeleteRelationAsync(userId, userFollowedId);
+        }
+
 
         static public void AddComment(Comment comment, ObjectId postId)
         {
@@ -181,6 +198,12 @@ namespace SocialNetworkWPF
 
             return comments;
         }
+        static public async Task<string> GetPathLength(string userId, string userFollowedId)
+        {
+            int pathLength = await graph.PathLengthAsync(userId, userFollowedId);
+            return pathLength.ToString();
+        }
+
 
     }
 }
